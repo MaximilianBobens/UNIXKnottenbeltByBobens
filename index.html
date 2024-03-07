@@ -6,7 +6,21 @@
 </head>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 <script src="bootstrap.js"></script>
+<style>
+    body{
+    padding: 2vw;
+    }
+
+    img{
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+
+
+</style>
 <body>
+
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Navbar</a>
@@ -23,9 +37,9 @@
                         UNIX Course
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Course 1</a></li>
+                        <li><a class="dropdown-item" href="#part1">Course 1</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Course 2</a></li>
+                        <li><a class="dropdown-item" href="#part2">Course 2</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Course 3</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -46,7 +60,7 @@
                         UNIX Exercises
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Exercise 1</a></li>
+                        <li><a class="dropdown-item" href="">Exercise 1</a></li>
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">Exercise 2</a></li>
                         <li><hr class="dropdown-divider"></li>
@@ -67,9 +81,138 @@
         </div>
     </div>
 </nav>
+<img src="/IMG/pic26.jpg" alt="">
+
+<div class="section" id="part1">
+    <h2>1.1 Objectives</h2>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">The concept of an operating system.</li>
+        <li class="list-group-item">The internal architecture of an operating system.</li>
+        <li class="list-group-item">The evolution of the UNIX operating system into two broad schools (BSD and SYSV) and the development of Linux, a popular open-source operating system.</li>
+        <li class="list-group-item">The architecture of the Linux operating system in more detail.</li>
+        <li class="list-group-item">How to log into (and out of) UNIX and change your password.</li>
+        <li class="list-group-item">The general format of UNIX commands.</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2>1.2 What is an Operating System?</h2>
+    <p class="lead">
+       <li>An operating system (OS) is a resource manager.</li>  <br>
+       <li>Ensures safe access to resources like printers, managing CPU efficiently by suspending waiting programs for I/O operations, and providing abstractions like files instead of disk locations.</li><br>
+       <li>It comprises a set of software routines facilitating access to system resources such as CPU, memory, disks, modems, printers, network cards, etc.</li> <br>
+       <li>Encourages safe, efficient, and abstract use of system resources.</li> <br>
+    </p>
+</div>
+
+<div class="section">
+    <h2>1.3 Architecture of the Linux Operating System </h2>
+    <p class="lead">
+    <h2>Kernel</h2>
+        The Linux kernel includes device driver support for a large number of PC hardware devices (graphics cards, network cards, hard disks etc.), advanced processor and memory management features, and support for many different types of filesystems (including DOS floppies and the ISO9660 standard for CDROMs). In terms of the services that it provides to application programs and system utilities, the kernel implements most BSD and SYSV system calls, as well as the system calls described in the POSIX.1 specification.
+        The kernel (in raw binary form that is loaded directly into memory at system startup time) is typically found in the file
+    /boot/vmlinuz, while the source files can usually be found in /usr/src/linux.The latest version of the Linux kernel sources
+    can be downloaded from http://www.kernel.org.
+
+    <h2>Shells and GUIs</h2>
+        Linux supports two forms of command input: through textual command line shells similar to those found
+    on most UNIX systems (e.g. sh - the Bourne shell, bash - the Bourne again shell and csh - the C shell) and through graphical
+    interfaces (GUIs) such as the KDE and GNOME window managers. If you are connecting remotely to a server your access will typically
+    be through a command line shell.
+
+    <h2>System Utilities</h2>
+        Virtually every system utility that you would expect to find on standard implementations of UNIX (including every system utility described in the POSIX.2 specification) has been ported to Linux. This includes commands such as ls, cp, grep, awk, sed, bc, wc, more, and so on. These system utilities are designed to be powerful tools that do a single task extremely well (e.g. grep finds text inside files while wc counts the number of words, lines and bytes inside a file). Users can often solve problems by interconnecting these tools instead of writing a large monolithic application program.
+        Like other UNIX flavours, Linux's system utilities also include server programs called daemons which provide
+    remote network and administration services (e.g. telnetd and sshd provide remote login facilities, lpd provides printing
+    services , httpd serves web pages, crond runs regular system administration tasks automatically).
+    A daemon (probably derived from the Latin word which refers to a beneficient spirit who watches over someone,
+    or perhaps short for "Disk And Execution MONitor") is usually spawned automatically at system startup and spends
+    most of its time lying dormant (lurking?) waiting for some event to occur.
+
+    <h2>Application programs</h2>
+        Linux distributions typically come with several useful application programs as standard. Examples include the emacs editor, xv (an image viewer), gcc (a C compiler), g++ (a C++ compiler), xfig (a drawing package), latex (a powerful typesetting language) and soffice (StarOffice, which is an MS-Office style clone that can read and write Word, Excel and PowerPoint files).
+        Redhat Linux also comes with rpm, the Redhat Package Manager which makes it easy to install and uninstall application programs.
+    </p>
 
 
+    <div class="section">
+        <h2>1.3 Changing your password </h2>
+        <p class="lead">
 
+
+        <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    One of the things you should do when you log in for the first time is to change your password.
+                    The UNIX command to change your password is passwd:
+                </button>
+                </h2>
+        </div>
+        </div>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <br>
+                <strong>$ passwd</strong>
+                <br>
+                <br>
+                The system will prompt you for your old password, then for your new password.
+                To eliminate any possible typing errors you have made in your new password, it will ask you to reconfirm your new password.
+                Remember the following points when choosing your password:
+                Avoid characters which might not appear on all keyboards, e.g. '£'.
+                The weakest link in most computer security is user passwords so keep your password a secret, don't write it down and don't tell it to anyone else. Also avoid dictionary words or words related to your personal details (e.g. your boyfriend or girlfriend's name or your login).
+                Make it at least 7 or 8 characters long and try to use a mix of letters, numbers and punctuation.
+            </div>
+        </div>
+    </div>
+    </p>
+    </div>
+</div>
+
+<div class="section" id="part2">
+    <div class="section">
+        <h2>2.1 Objectives</h2>
+        <p>The UNIX operating system is built around the concept of a filesystem which is used to store all of the information that constitutes the long-term state of the system. This state includes the operating system kernel itself, the executable files for the commands supported by the operating system, configuration information, temporary workfiles, user data, and various special files that are used to give controlled access to system hardware and operating system functions.
+            Every item stored in a UNIX filesystem belongs to one of four types:</p>
+        <div class="accordion" id="accordionExample2">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        <h2>Ordinary files</h2>
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>
+                            <li>Can contain text, data, or program information.</li><br>
+                            <li>Cannot contain other files or directories.</li><br>
+                            <li>UNIX filenames can contain any keyboard character except '/' and can be up to 256 characters long.</li><br>
+                            <li>Unlike other operating systems, UNIX filenames do not have a separate extension part, though extensions are often used for file classification.</li><br>
+                            <li>Special characters like '*', '?', '#', and '&' have special meanings in most shells and should be avoided in filenames.</li><br>
+                            <li>  Using spaces in filenames can make them difficult to manipulate; underscores '_' are preferred.</li><br></p>
+                    </div>
+                </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                   <h2>Directories</h2>
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+
+                </div>
+            </div>
+        </div>
+
+        <h2>Devices</h2>
+        <p></p>
+        <h2>Links</h2>
+        <p></p>
+    </div>
+</div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
