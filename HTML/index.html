@@ -10,7 +10,7 @@
 
     }
     body{
-    padding: 2vw;
+        padding: 2vw;
         background: #1a1d20;
         color: white;
     }
@@ -36,6 +36,11 @@
     }
     .card-img-top{
         height: 80vh;
+    }
+
+    .accordion-item{
+        background-color:#1a1d20 ;
+        color: white;
     }
 
 
@@ -270,7 +275,6 @@
         </div>
     </div>
     <h2>2.2 Typical UNIX Directory Structure</h2>
-
     <div class="card-group card-body justify-content-center flex-row ">
         <div class="card ">
             <div class="card-body">
@@ -336,8 +340,207 @@
         </div>
     </div>
 <!-- Next add Commands in Accordion Bootstrap -->
+
+
+        <!-- Accordion -->
+
+
+            <!-- ls Command Panel -->
+
+            <div class="container mt-5">
+                <h2 class="mb-4">Directory and File Handling Commands</h2>
+                <div class="accordion" id="accordionExampleSix">
+
+                    <!-- pwd Command Panel -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                                pwd (print [current] working directory)
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExampleSix">
+                            <div class="accordion-body">
+                                <p>pwd displays the full absolute path to your current location in the filesystem. So</p>
+                                <pre><code> <strong>$ pwd</strong>
+                                    /usr/bin
+                                </code></pre>
+                                <p>implies that /usr/bin is the current working directory.</p>
+                            </div>
+                        </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                            ls (list directory)
+                        </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExampleSix">
+                        <div class="accordion-body">
+                            <p>ls lists the contents of a directory. If no target directory is given, then the contents of the current working directory are displayed. So, if the current working directory is /,</p>
+                            <pre><code>
+                            <strong>$ ls</strong>
+                            bin   dev  home  mnt   share  usr  var
+                            boot  etc  lib   proc  sbin   tmp  vol
+                        </code></pre>
+                            <p>Actually, ls doesn't show you all the entries in a directory - files and directories that begin with a dot (.) are hidden (this includes the directories '.' and '..' which are always present). The reason for this is that files that begin with a . usually contain important configuration information and should not be changed under normal circumstances. If you want to see all files, ls supports the -a option:</p>
+                            <pre><code>
+                            <strong>$ ls -a</strong>
+                        </code></pre>
+                            <p>Even this listing is not that helpful - there are no hints to properties such as the size, type and ownership of files, just their names. To see more detailed information, use the -l option (long listing), which can be combined with the -a option as follows:</p>
+                            <pre><code>
+                            <strong> $ ls -a -l</strong>
+                             (or, equivalently,)
+                            <strong>$ ls -al</strong>
+                        </code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion -->
+                <div class="accordion" id="accordionExampleA">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                cd (change [current working] directory)
+                            </button>
+                        </h2>
+                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingThree" data-parent="#accordionExampleSix">
+                            <div class="accordion-body">
+                              <strong>$ cd path</strong>
+                                <p>changes your current working directory to path (which can be an absolute or a relative path). One of the most common relative paths to use is '..' (i.e. the parent directory of the current directory).
+
+                                    Used without any target directory
+                                    <br>
+                                    <br>
+                                  <strong>$ cd</strong>
+                                    br
+                                    resets your current working directory to your home directory (useful if you get lost). If you change into a directory and you subsequently want to return to your original directory, use
+
+                                    <strong> $ cd -</strong>
+                                  </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- mkdir Command Panel -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                mkdir (make directory)
+                            </button>
+                        </h2>
+                        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingFour" data-parent="#accordionExampleSix">
+                            <div class="accordion-body">
+                                <strong>$ mkdir directory</strong>
+                                <p>creates a subdirectory called  directoryin the current working directory. You can only create subdirectories in a directory if you have write permission on that directory.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- rmdir Command Panel -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                                rmdir (remove directory)
+                            </button>
+                        </h2>
+                        <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingFive" data-parent="#accordionExampleSix">
+                            <div class="accordion-body">
+                                <strong>$ rmdir directory</strong>
+                                <p>removes the subdirectory directory from the current working directory. You can only remove subdirectories if they are completely empty (i.e. of all entries besides the '.' and '..' directories).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- cp Command Panel -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                                cp (copy)
+                            </button>
+                        </h2>
+                        <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingSix" data-parent="#accordionExampleSix">
+                            <div class="accordion-body">
+                                <p>cp is used to make copies of files or entire directories. To copy files, use:</p>
+                                <strong>$ cp source-file(s) destination</strong>
+                                <p>where source-file(s) and destination specify the source and destination of the copy respectively. The behaviour of cp depends on whether the destination is a file or a directory. If the destination is a file, only one source file is allowed and cp makes a new file called destination that has the same contents as the source file. If the destination is a directory, many source files can be specified, each of which will be copied into the destination directory. Section 2.6 will discuss efficient specification of source files using wildcard characters.
+
+                                    To copy entire directories (including their contents), use a recursive copy:</p>
+                                <strong>$ cp -rd source-directories destination-directory</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- mv Command Panel -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseThirteen" aria-expanded="false" aria-controls="collapseThirteen">
+                                mv (move/rename)
+                            </button>
+                        </h2>
+                        <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-parent="#accordionExampleSix">
+                            <div class="accordion-body">
+                                <p>mv is used to rename files/directories and/or move them from one directory into another. Exactly one source and one destination must be specified:</p>
+                                <strong>$ mv source destination</strong>
+                                <p>If destination is an existing directory, the new name for source (whether it be a file or a directory) will  be destination/source. If source and destination are both files, source is renamed destination. N.B.: if destination is an existing file it will be destroyed and overwritten by source (you can use the -i option if you would like to be asked for confirmation before a file is overwritten in this way).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- rm Command Panel -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseFourteen" aria-expanded="false" aria-controls="collapseFourteen">
+                                rm (remove/delete)
+                            </button>
+                        </h2>
+                        <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingEight" data-parent="#accordionExampleSix">
+                            <div class="accordion-body">
+                                <strong>$ rm target-file(s)</strong>
+                                <p>removes the specified files. Unlike other operating systems, it is almost impossible to recover a deleted file unless you have a backup (there is no recycle bin!) so use this command with care. If you would like to be asked before files are deleted, use the -i option:</p>
+                                <strong>$ rm -i myfile
+                                    rm: remove 'myfile'?</strong>
+                                <p>rm can also be used to delete directories (along with all of their contents, including any subdirectories they contain). To do this, use the -r option. To avoid rm from asking any questions or giving errors (e.g. if the file doesn't exist) you used the -f (force) option. Extreme care needs to be taken when using this option - consider what would happen if a system administrator was trying to delete user will's home directory and accidentally typed:</p>
+                                <strong>$ rm -rf / home/will</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- cat Command Panel -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingNine">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseFifteen" aria-expanded="false" aria-controls="collapseFifteen">
+                                cat (catenate/type)
+                            </button>
+                        </h2>
+                        <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingNine" data-parent="#accordionExampleSix">
+                            <div class="ordion-body">
+                                <strong></strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- more and less Command Panel -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTen">
+                            <button class="accordion-button collapsed" type="button" data-toggle="collapse" data-target="#collapseSixteen" aria-expanded="false" aria-controls="collapseSixteen">
+                                more and less (catenate with pause)
+                            </button>
+                        </h2>
+                        <div id="collapseSixteen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-parent="#accordionExampleSix">
+                            <div class="accordion-body">
+                                <strong></strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
